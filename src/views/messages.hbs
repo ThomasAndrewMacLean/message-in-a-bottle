@@ -1,0 +1,8 @@
+{{#each messages}}
+<div>
+    <code>
+      {{this.uuid}}: {{this.text}}  ({{this.createdAt}})
+    </code>
+    <a href="/message/{{this.uuid}}">link</a>
+</div>
+{{/each}}
