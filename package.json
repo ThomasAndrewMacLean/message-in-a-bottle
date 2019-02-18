@@ -2,11 +2,11 @@
     "name": "message-in-a-bottle",
     "version": "1.0.0",
     "description": "",
-    "main": "app.js",
+    "main": "src/app.js",
     "scripts": {
         "dev": "nodemon --exec babel-node src/app.js",
         "start": "node src/app.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest"
     },
     "repository": {
         "type": "git",
@@ -20,8 +20,10 @@
     },
     "homepage": "https://github.com/ThomasAndrewMacLean/message-in-a-bottle#readme",
     "dependencies": {
+        "@babel/polyfill": "^7.2.5",
         "body-parser": "^1.18.3",
         "dotenv": "^6.2.0",
+        "eslint-plugin-jest": "^22.3.0",
         "express": "^4.16.4",
         "express-handlebars": "^3.0.0",
         "morgan": "^1.9.1",
@@ -33,6 +35,7 @@
         "@babel/node": "^7.2.2",
         "@babel/preset-env": "^7.3.1",
         "eslint": "^5.14.1",
+        "jest": "^24.1.0",
         "nodemon": "^1.18.10"
     }
 }
