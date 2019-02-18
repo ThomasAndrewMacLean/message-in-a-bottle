@@ -1,5 +1,7 @@
 # message-in-a-bottle
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ThomasAndrewMacLean/message-in-a-bottle.svg)](https://greenkeeper.io/)
+
 
 
 
