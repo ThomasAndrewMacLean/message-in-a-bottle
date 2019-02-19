@@ -5,7 +5,7 @@
     "main": "src/app.js",
     "scripts": {
         "dev": "nodemon --exec babel-node src/app.js",
-        "start": "npm run build && node dist/app.js",
+        "start": "node dist/app.js",
         "test": "jest",
         "build": "./node_modules/.bin/babel src --out-dir dist && cp -R src/views dist && cp -R src/public/css dist/public"
     },
