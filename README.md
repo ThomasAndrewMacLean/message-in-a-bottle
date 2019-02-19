@@ -12,7 +12,7 @@
 [CD travis medium article](https://medium.com/@sommershurbaji/continuous-delivery-with-aws-elastic-beanstalk-and-travis-ci-2dd54754965f)
 
 [environment variables EB](https://alexdisler.com/2016/03/26/nodejs-environment-variables-elastic-beanstalk-aws/)
-
+[setup aws codepipeline](https://www.youtube.com/watch?v=41vWKolYnB4)
 [Ajax form](https://blog.teamtreehouse.com/create-ajax-contact-form)
 
 ### consoles
