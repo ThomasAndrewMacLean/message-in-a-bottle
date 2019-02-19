@@ -4,6 +4,9 @@ subsribed using slack github bot
 [AWS EB monitoring emails sent to slackbot email](https://get.slack.help/hc/en-us/articles/206819278-Send-emails-to-Slack)
 
 ## docs
+[set up CName](https://colintoh.com/blog/map-custom-domain-to-elastic-beanstalk-application)
+ 
+https://itnext.io/how-to-make-form-submissions-secure-on-an-api-website-d80bcfdb5149
 
 ### setup
 
