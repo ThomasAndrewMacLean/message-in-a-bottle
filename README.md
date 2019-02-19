@@ -1,4 +1,7 @@
 # message-in-a-bottle
+## monitoring
+subsribed using slack github bot
+AWS EB monitoring emails sent to slackbot email
 
 ## docs
 
