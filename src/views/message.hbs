@@ -1,4 +1,5 @@
-<h1> {{message.uuid}}: {{message.text}} ({{message.createdAt}})</h1>
+<h1> {{message.text}}</h1>
+"{{ message.hint }}"
 
 <form action="/decrypt" method="post">
     <input type="text" style="display:none" name="text" value="{{message.text}}">
@@ -10,12 +11,12 @@
 <button id="btn-wa">Share</button>
 
 <script>
+    console.log("{{ message.hint }}")
     const clickBtnWa = () => {
         let aLink = document.createElement('a');
         aLink.href =
-            'whatsapp://send?text= ' + {{ message.hint }
-    } + ' : ' + document.location.href;
-    aLink.click();
+            'whatsapp://send?text= ' + "{{ message.hint }}" + ' : ' + document.location.href;
+        aLink.click();
     };
     const btnWa = document.getElementById('btn-wa');
     if (btnWa) {
