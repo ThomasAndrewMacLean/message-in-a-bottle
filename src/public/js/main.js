@@ -19,7 +19,8 @@ if (btn) {
 
 const clickBtnWa = () => {
   let aLink = document.createElement('a');
-  aLink.href = 'whatsapp://send?text=secret message...: ';
+  aLink.href =
+    'whatsapp://send?text=secret message...: ' + document.location.href;
   aLink.click();
 };
 const btnWa = document.getElementById('btn-wa');
