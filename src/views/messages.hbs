@@ -1,8 +1,17 @@
-{{#each messages}}
-<div>
-    <code>
-      {{this.uuid}}: {{this.text}}  ({{this.createdAt}})
+<ul class="scroller">
+    {{#each messages}}
+    <li>
+
+        <code>
+        {{this.uuid}}
     </code>
-    <a href="/message/{{this.uuid}}">link</a>
-</div>
-{{/each}}
+        <code>
+        {{this.text}}
+    </code>
+        <code>
+        {{this.hint}}
+    </code>
+        <a href="/message/{{this.uuid}}">link</a>
+    </li>
+    {{/each}}
+</ul>

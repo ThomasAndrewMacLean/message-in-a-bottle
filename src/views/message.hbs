@@ -1,10 +1,9 @@
-<h1> {{message.text}}</h1>
-"{{ message.hint }}"
+<h3 class="encryption">{{message.text}}</h3>
 
 <form action="/decrypt" method="post">
     <input type="text" style="display:none" name="text" value="{{message.text}}">
-    <input type="text" name="key">
-    <input type="submit" value="Decrypt">
+    <input type="text" name="key" required placeholder="{{message.hint}}">
+    <input type="submit" value="Decrypt" class="button-primary">
 </form>
 
 
