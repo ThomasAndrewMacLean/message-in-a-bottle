@@ -13,4 +13,7 @@ const clickBtn = () => {
 };
 
 const btn = document.getElementById('btn');
-btn.addEventListener('click', clickBtn);
+
+if (btn) {
+  btn.addEventListener('click', clickBtn);
+}

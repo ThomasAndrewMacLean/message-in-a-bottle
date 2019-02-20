@@ -7,11 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/styles.css">
     <title>{{ title }}</title>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeCmZIUAAAAALSrgc1i3sldszNjwo1fCwnHG_cW"></script>
 </head>
 
 <body>
     {{{ body }}}
 
+    <div class="g-recaptcha" data-sitekey="6LeCmZIUAAAAALSrgc1i3sldszNjwo1fCwnHG_cW"></div>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LeCmZIUAAAAALSrgc1i3sldszNjwo1fCwnHG_cW', { action: 'homepage' }).then(function (token) {
+
+            });
+        });
+    </script>
     <script src="/js/main.js"></script>
 </body>
 
