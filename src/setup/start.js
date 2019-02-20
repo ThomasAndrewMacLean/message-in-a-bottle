@@ -4,8 +4,8 @@ import { sequelize } from './../database/models';
 import { createMockMessages } from './../database/mocks';
 
 const start = app => {
+  // Set to true to clear database! 
   const eraseDatabaseOnSync = false;
-  //const eraseDatabaseOnSync = true;
 
   sequelize.sync({ force: eraseDatabaseOnSync }).then(() => {
     if (eraseDatabaseOnSync) {

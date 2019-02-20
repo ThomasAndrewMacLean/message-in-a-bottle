@@ -5,7 +5,8 @@ const message = (sequelize, DataTypes) => {
       defaultValue: DataTypes.UUIDV1,
       primaryKey: true
     },
-    text: DataTypes.STRING
+    text: DataTypes.STRING,
+    hint: DataTypes.STRING
   });
 
   return Message;

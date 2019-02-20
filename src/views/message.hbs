@@ -8,3 +8,17 @@
 
 
 <button id="btn-wa">Share</button>
+
+<script>
+    const clickBtnWa = () => {
+        let aLink = document.createElement('a');
+        aLink.href =
+            'whatsapp://send?text= ' + {{ message.hint }
+    } + ' : ' + document.location.href;
+    aLink.click();
+    };
+    const btnWa = document.getElementById('btn-wa');
+    if (btnWa) {
+        btnWa.addEventListener('click', clickBtnWa);
+    }
+</script>
