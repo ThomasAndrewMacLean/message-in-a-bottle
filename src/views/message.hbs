@@ -1,1 +1,7 @@
 <h1> {{message.uuid}}: {{message.text}} ({{message.createdAt}})</h1>
+
+<form action="/decrypt" method="post">
+    <input type="text" style="display:none" name="text" value="{{message.text}}">
+    <input type="text" name="key">
+    <input type="submit" value="Decrypt">
+</form>

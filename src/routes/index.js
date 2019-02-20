@@ -1,5 +1,5 @@
 import models from '../database/models';
-import {encrypt, decrypt} from '../crypto/crypto';
+import { encrypt, decrypt } from '../crypto/crypto';
 
 const routes = app => {
   app.get('/ping', (req, res) => {
@@ -29,12 +29,18 @@ const routes = app => {
     const { key, message } = req.body;
 
     const encryptedMessage = encrypt(message, key);
-    
+
     return models.Message.create({
       text: encryptedMessage
     })
       .then(todo => res.render('send', { todo, key }))
       .catch(error => res.status(400).send(error));
+  });
+
+  app.post('/decrypt', (req, res) => {
+    const { key, text } = req.body;
+    const decryptedMessage = decrypt(text, key);
+    res.status(200).json({ decryptedMessage });
   });
 };
 
