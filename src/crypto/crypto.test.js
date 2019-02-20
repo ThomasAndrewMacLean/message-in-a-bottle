@@ -19,4 +19,9 @@ describe('crypto', () => {
     const encrypted = encrypt(text, key);
     expect(decrypt(encrypted, wrongKey)).not.toEqual(text);
   });
+
+  it('should not look at capitalization of the key', () => {
+    const encrypted = encrypt(text, key);
+    expect(decrypt(encrypted, 'pAsSWord')).toEqual(text);
+  });
 });

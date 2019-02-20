@@ -26,21 +26,22 @@ const routes = app => {
   });
 
   app.post('/send', (req, res) => {
-    const { key, message } = req.body;
+    const { key, message, hint } = req.body;
 
     const encryptedMessage = encrypt(message, key);
 
     return models.Message.create({
-      text: encryptedMessage
+      text: encryptedMessage,
+      hint
     })
-      .then(todo => res.render('send', { todo, key }))
+      .then(message => res.render('message', { message }))
       .catch(error => res.status(400).send(error));
   });
 
   app.post('/decrypt', (req, res) => {
     const { key, text } = req.body;
     const decryptedMessage = decrypt(text, key);
-    res.status(200).json({ decryptedMessage });
+    res.render('decrypted', {decryptedMessage});
   });
 };
 
