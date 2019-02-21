@@ -1,5 +1,16 @@
 import models from '../database/models';
 import { encrypt, decrypt } from '../crypto/crypto';
+import Joi from 'joi';
+
+const schemaEncrypt = Joi.object().keys({
+  key: Joi.string().required(),
+  message: Joi.string().required(),
+  hint: Joi.string().required()
+});
+const schemaDecrypt = Joi.object().keys({
+  key: Joi.string().required(),
+  text: Joi.string().required()
+});
 
 const routes = app => {
   app.get('/ping', (req, res) => {
@@ -28,6 +39,10 @@ const routes = app => {
   app.post('/message', (req, res) => {
     const { key, message, hint } = req.body;
 
+    const result = Joi.validate({ key, message, hint }, schemaEncrypt);
+    if (result.error) {
+      return res.status(500).send(result.error);
+    }
     const encryptedMessage = encrypt(message, key);
 
     return models.Message.create({
@@ -40,6 +55,11 @@ const routes = app => {
 
   app.post('/decrypt', (req, res) => {
     const { key, text } = req.body;
+    const result = Joi.validate({ key, text }, schemaDecrypt);
+    if (result.error) {
+      return res.status(500).send(result.error);
+    }
+
     const decryptedMessage = decrypt(text, key);
     res.render('decrypted', { decryptedMessage });
   });
