@@ -8,7 +8,7 @@
         "start": "node dist/app.js",
         "test": "jest",
         "testDev": "jest --watch",
-        "build": "./node_modules/.bin/babel src --out-dir dist && cp -R src/views dist && cp -R src/public/css dist/public"
+        "build": "./node_modules/.bin/babel src --out-dir dist && cp -R src/views dist && cp -R src/public/css dist/public && cp -R src/public/assets dist/public"
     },
     "repository": {
         "type": "git",
