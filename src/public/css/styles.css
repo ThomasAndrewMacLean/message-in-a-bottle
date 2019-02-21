@@ -20,6 +20,26 @@ body {
 
 }
 
+footer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.info-wrap {
+    width: 100vw;
+    margin: 2rem 0;
+    background: rgba(0, 0, 0, 0.3);
+
+}
+
+.info {
+    text-align: center;
+    font-size: 1.3rem;
+    color: white;
+    padding: 1rem;
+}
+
 .emoji {
     font-size: large;
     font-style: normal;
