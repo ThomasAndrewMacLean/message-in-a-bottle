@@ -14,6 +14,7 @@
     console.log("{{ message.hint }}")
     const clickBtnWa = () => {
         let aLink = document.createElement('a');
+        aLink.setAttribute('target', '_blank');
         aLink.href =
             'https://api.whatsapp.com/send?text= ' + "{{ message.hint }}" + ' : http://' + window.location.host + "/message/{{message.uuid}}";
         aLink.click();
