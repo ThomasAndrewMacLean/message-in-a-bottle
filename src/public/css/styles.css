@@ -25,17 +25,6 @@ body {
     font-style: normal;
 }
 
-footer {
-    height: 40px;
-    /* background: #f8f8ff; */
-    position: fixed;
-    width: 100vw;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: medium;
-}
 a {
     text-decoration: wavy;
     color: #073f50;
