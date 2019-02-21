@@ -34,14 +34,14 @@ const routes = app => {
       text: encryptedMessage,
       hint
     })
-      .then(message => res.render('message', { message }))
+      .then(message => res.render('message', { message, newMessage: true }))
       .catch(error => res.status(400).send(error));
   });
 
   app.post('/decrypt', (req, res) => {
     const { key, text } = req.body;
     const decryptedMessage = decrypt(text, key);
-    res.render('decrypted', {decryptedMessage});
+    res.render('decrypted', { decryptedMessage });
   });
 };
 

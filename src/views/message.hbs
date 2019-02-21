@@ -24,8 +24,8 @@
     if (btnWa) {
         btnWa.addEventListener('click', clickBtnWa);
     }
-    
-        const clickBtnTw = () => {
+
+    const clickBtnTw = () => {
         let aLink = document.createElement('a');
         aLink.setAttribute('target', '_blank');
         aLink.href =
@@ -36,6 +36,11 @@
     if (btnTw) {
         btnTw.addEventListener('click', clickBtnTw);
     }
-    
+
+    if ("{{newMessage}}") {
+        //add uuid of the message to the url if we arrive here from POSTing a new message.
+        history.replaceState({}, "messagge", "/message/{{message.uuid}}");
+    }
+
     // window.open("https://twitter.com/share?url="+encodeURIComponent(url));
 </script>
