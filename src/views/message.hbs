@@ -5,7 +5,8 @@
     <input type="text" style="display:none" name="text" value="{{message.text}}">
     <input class="u-full-width" type="text" name="key" required placeholder="{{message.hint}}">
     <input type="submit" value="Decrypt" class="button-primary u-full-width">
-    <button type="button" class="u-full-width" id="btn-wa">Share</button>
+    <button type="button" class="u-full-width" id="btn-wa">Share WhatsApp</button>
+    <button type="button" class="u-full-width" id="btn-tw">Share Twitter</button>
 </form>
 
 
@@ -23,4 +24,18 @@
     if (btnWa) {
         btnWa.addEventListener('click', clickBtnWa);
     }
+    
+        const clickBtnTw = () => {
+        let aLink = document.createElement('a');
+        aLink.setAttribute('target', '_blank');
+        aLink.href =
+            'https://twitter.com/share?url=" + ' : http://' + window.location.host + "/message/{{message.uuid}}";
+        aLink.click();
+    };
+    const btnTw = document.getElementById('btn-tw');
+    if (btnTw) {
+        btnTw.addEventListener('click', clickBtnTw);
+    }
+    
+    // window.open("https://twitter.com/share?url="+encodeURIComponent(url));
 </script>
