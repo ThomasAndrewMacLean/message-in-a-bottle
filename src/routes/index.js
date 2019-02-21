@@ -18,19 +18,19 @@ const routes = app => {
   });
 
   app.get('/', (req, res) => {
-    res.render('index', { title: 'Message in a bottle' });
+    res.render('index', { title: 'Message in a bottle', date: +new Date().getFullYear() });
   });
 
   app.get('/messages', async (req, res) => {
     const messages = await models.Message.findAll();
-    res.render('messages', { messages });
+    res.render('messages', { messages, date: +new Date().getFullYear() });
   });
 
   app.get('/message/:messageId', async (req, res) => {
     const messageId = req.params.messageId;
     try {
       const message = await models.Message.findById(messageId);
-      res.render('message', { message });
+      res.render('message', { message, date: +new Date().getFullYear() });
     } catch (error) {
       res.render('error', {});
     }
@@ -49,7 +49,7 @@ const routes = app => {
       text: encryptedMessage,
       hint
     })
-      .then(message => res.render('message', { message, newMessage: true }))
+      .then(message => res.render('message', { message, newMessage: true, date: +new Date().getFullYear() }))
       .catch(error => res.status(400).send(error));
   });
 
@@ -61,7 +61,7 @@ const routes = app => {
     }
 
     const decryptedMessage = decrypt(text, key);
-    res.render('decrypted', { decryptedMessage });
+    res.render('decrypted', { decryptedMessage, date: +new Date().getFullYear() });
   });
 };
 
