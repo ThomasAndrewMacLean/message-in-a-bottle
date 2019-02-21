@@ -25,7 +25,7 @@ const routes = app => {
     }
   });
 
-  app.post('/send', (req, res) => {
+  app.post('/message', (req, res) => {
     const { key, message, hint } = req.body;
 
     const encryptedMessage = encrypt(message, key);
