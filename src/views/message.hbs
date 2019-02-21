@@ -29,7 +29,7 @@
         let aLink = document.createElement('a');
         aLink.setAttribute('target', '_blank');
         aLink.href =
-            "https://twitter.com/share?url=" + "http://" + window.location.host + "/message/{{message.uuid}}";
+            "https://twitter.com/intent/tweet?text=" + "http://" + window.location.host + "/message/{{message.uuid}}";
         aLink.click();
     };
     const btnTw = document.getElementById('btn-tw');

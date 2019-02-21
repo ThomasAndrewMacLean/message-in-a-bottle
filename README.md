@@ -9,7 +9,7 @@ subsribed using slack github bot
 https://itnext.io/how-to-make-form-submissions-secure-on-an-api-website-d80bcfdb5149
 
 [history replace](https://developer.mozilla.org/en-US/docs/Web/API/History_API)
-
+[twitter card](https://onlinejournalismblog.com/2015/02/11/how-to-make-a-tweetable-image-in-your-blog-post/)
 ### setup
 
 [babel](https://www.robinwieruch.de/minimal-node-js-babel-setup/)
