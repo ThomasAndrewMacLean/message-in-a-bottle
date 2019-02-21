@@ -1,13 +1,14 @@
 <h3 class="encryption">{{message.text}}</h3>
 
 <form action="/decrypt" method="post">
+    <label for="key">Fill in the key...</label>
     <input type="text" style="display:none" name="text" value="{{message.text}}">
-    <input type="text" name="key" required placeholder="{{message.hint}}">
-    <input type="submit" value="Decrypt" class="button-primary">
+    <input class="u-full-width" type="text" name="key" required placeholder="{{message.hint}}">
+    <input type="submit" value="Decrypt" class="button-primary u-full-width">
+    <button type="button" class="u-full-width" id="btn-wa">Share</button>
 </form>
 
 
-<button id="btn-wa">Share</button>
 
 <script>
     console.log("{{ message.hint }}")
