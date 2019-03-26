@@ -1,6 +1,7 @@
 <h3 class="encryption">{{message.text}}</h3>
 
-<form action="/decrypt" method="post">
+<form autocomplete="off" action="/decrypt" method="post">
+<input autocomplete="false" name="hidden" type="text" style="display:none;">
     <label for="key">Fill in the key...</label>
     <input type="text" style="display:none" name="text" value="{{message.text}}">
     <input class="u-full-width" type="text" name="key" required placeholder="{{message.hint}}">
