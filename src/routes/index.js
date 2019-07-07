@@ -18,7 +18,10 @@ const routes = app => {
   });
 
   app.get('/', (req, res) => {
-    res.render('index', { title: 'Message in a bottle', date: +new Date().getFullYear() });
+    res.render('index', {
+      title: 'Message in a bottle',
+      date: +new Date().getFullYear()
+    });
   });
 
   app.get('/messages', async (req, res) => {
@@ -49,7 +52,32 @@ const routes = app => {
       text: encryptedMessage,
       hint
     })
-      .then(message => res.render('message', { message, newMessage: true, date: +new Date().getFullYear() }))
+      .then(message =>
+        res.render('message', {
+          message,
+          newMessage: true,
+          date: +new Date().getFullYear()
+        })
+      )
+      .catch(error => res.status(400).send(error));
+  });
+
+  app.post('/api/message', (req, res) => {
+    const { key, message, hint } = req.body;
+
+    const result = Joi.validate({ key, message, hint }, schemaEncrypt);
+    if (result.error) {
+      return res.status(500).send(result.error);
+    }
+    const encryptedMessage = encrypt(message, key);
+
+    return models.Message.create({
+      text: encryptedMessage,
+      hint
+    })
+      .then(message =>
+        res.json('encryptedMsg', req.hostname + '/message/' + message.uuid)
+      )
       .catch(error => res.status(400).send(error));
   });
 
@@ -61,7 +89,10 @@ const routes = app => {
     }
 
     const decryptedMessage = decrypt(text, key);
-    res.render('decrypted', { decryptedMessage, date: +new Date().getFullYear() });
+    res.render('decrypted', {
+      decryptedMessage,
+      date: +new Date().getFullYear()
+    });
   });
 };
 
