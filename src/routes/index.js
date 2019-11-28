@@ -32,10 +32,10 @@ const routes = app => {
   app.get('/message/:messageId', async (req, res) => {
     const messageId = req.params.messageId;
     try {
-      const message = await models.Message.findById(messageId);
+      const message = await models.Message.findByPk(messageId);
       res.render('message', { message, date: +new Date().getFullYear() });
     } catch (error) {
-      res.render('error', {error});
+      res.render('error', { error });
     }
   });
 
