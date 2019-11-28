@@ -35,7 +35,7 @@ const routes = app => {
       const message = await models.Message.findById(messageId);
       res.render('message', { message, date: +new Date().getFullYear() });
     } catch (error) {
-      res.render('error', {});
+      res.render('error', {error});
     }
   });
 
